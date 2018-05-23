@@ -2,6 +2,7 @@ package pl.digita.sandbox.resttemplate;
 
 import org.springframework.http.ResponseEntity;
 import pl.digita.sandbox.dto.QuestionDTO;
+import pl.digita.sandbox.resttemplate.consumer.AbstractConsumer;
 import pl.digita.sandbox.resttemplate.consumer.Consumer;
 import pl.digita.sandbox.resttemplate.consumer.IConsumer;
 import pl.digita.sandbox.resttemplate.provider.EntityProvider;
@@ -10,7 +11,7 @@ import java.util.List;
 
 public class Main {
 
-    private final static IConsumer consumer = new Consumer();
+    private final static IConsumer<QuestionDTO> consumer = new Consumer();
 
     public static void main(String[] args) {
 
@@ -23,6 +24,10 @@ public class Main {
         System.out.println("===================SAVE=====================================");
         System.out.println("POST STATUS -> "+ response.getStatusCode());
         System.out.println("SAVED ENTITY -> " + response.getBody());
+
+
+        System.out.println("================BUILD PARAMS=========================");
+        AbstractConsumer.buildURLWithParamsPOC();
     }
 
 

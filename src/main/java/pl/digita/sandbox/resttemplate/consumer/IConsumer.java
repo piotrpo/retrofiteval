@@ -1,13 +1,12 @@
 package pl.digita.sandbox.resttemplate.consumer;
 
 import org.springframework.http.ResponseEntity;
-import pl.digita.sandbox.dto.QuestionDTO;
 
 import java.util.List;
 
-public interface IConsumer {
+public interface IConsumer<T> {
 
-    List<QuestionDTO> getQuestions();
+    List<T> getQuestions();
 
-    ResponseEntity<QuestionDTO> postQuestion(QuestionDTO question);
+    ResponseEntity<T> postQuestion(T entity);
 }
