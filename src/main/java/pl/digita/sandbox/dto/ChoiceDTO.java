@@ -38,10 +38,11 @@ public class ChoiceDTO {
 
   @Override
   public String toString() {
-    return "ChoiceDTO{" +
-            "choice='" + choice + '\'' +
-            ", votes=" + votes +
-            ", url='" + url + '\'' +
-            '}';
+    final StringBuilder sb = new StringBuilder("Choice{");
+    sb.append(choice);
+    sb.append(", ").append(votes);
+    sb.append(",").append(url);
+    sb.append('}');
+    return sb.toString();
   }
 }

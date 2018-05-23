@@ -2,6 +2,7 @@ package pl.digita.sandbox.resttemplate.consumer;
 
 
 import org.springframework.http.HttpEntity;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import pl.digita.sandbox.dto.QuestionDTO;
@@ -24,8 +25,8 @@ public class Consumer implements IConsumer {
     }
 
 
-    public void postQuestion(final QuestionDTO question) {
-        HttpEntity<QuestionDTO> body = new HttpEntity<>(question);
-        REST_TEMPLATE.postForEntity(URL, body, QuestionDTO.class);
+    public ResponseEntity<QuestionDTO> postQuestion(final QuestionDTO question) {
+        final HttpEntity<QuestionDTO> body = new HttpEntity<>(question);
+        return REST_TEMPLATE.postForEntity(URL, body, QuestionDTO.class);
     }
 }

@@ -45,11 +45,13 @@ public class QuestionDTO {
 
   @Override
   public String toString() {
-    return "QuestionDTO{" +
-            "question='" + question + '\'' +
-            ", publishedAt='" + publishedAt + '\'' +
-            ", choiceDTOS=" + choiceDTOS +
-            ", url='" + url + '\'' +
-            '}';
+    final StringBuilder sb = new StringBuilder("Question{");
+    sb.append(question);
+    sb.append(", ").append(publishedAt);
+    sb.append(", ").append(choiceDTOS);
+    sb.append(", ").append(url);
+    sb.append('}');
+    sb.append('\n');
+    return sb.toString();
   }
 }
