@@ -7,6 +7,7 @@ public class QuestionDTO {
   private String question;
   @JsonProperty("published_at")
   private String publishedAt;
+  @JsonProperty("choices")
   private List<ChoiceDTO> choiceDTOS;
   private String url;
 
@@ -40,5 +41,15 @@ public class QuestionDTO {
 
   public void setUrl(String url) {
     this.url = url;
+  }
+
+  @Override
+  public String toString() {
+    return "QuestionDTO{" +
+            "question='" + question + '\'' +
+            ", publishedAt='" + publishedAt + '\'' +
+            ", choiceDTOS=" + choiceDTOS +
+            ", url='" + url + '\'' +
+            '}';
   }
 }
