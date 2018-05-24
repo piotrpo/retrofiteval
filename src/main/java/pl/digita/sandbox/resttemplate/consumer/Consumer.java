@@ -15,13 +15,13 @@ public class Consumer extends AbstractConsumer implements IConsumer<QuestionDTO>
     private static final String URL = "http://polls.apiblueprint.org/questions";
 
     @Override
-    public List<QuestionDTO> getQuestions() {
+    public List<QuestionDTO> get() {
         final QuestionDTO[] response = REST_TEMPLATE.getForObject(URL, QuestionDTO[].class);
         return Arrays.asList(response);
     }
 
     @Override
-    public ResponseEntity<QuestionDTO> postQuestion(final QuestionDTO question) {
+    public ResponseEntity<QuestionDTO> post(final QuestionDTO question) {
         final HttpEntity<QuestionDTO> body = new HttpEntity<>(question);
         return REST_TEMPLATE.postForEntity(URL, body, QuestionDTO.class);
     }

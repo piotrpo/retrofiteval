@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface IConsumer<T> {
 
-    List<T> getQuestions();
+    List<T> get();
 
-    ResponseEntity<T> postQuestion(T entity);
+    ResponseEntity<T> post(T entity);
+
+    //rest of the CRUD here...
 }
